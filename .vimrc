@@ -48,8 +48,7 @@ elseif &filetype == 'cpp'
 exec "!g++ % -o %<"
 exec "!time ./%<"
 elseif &filetype == 'java'
-exec "!javac % && time java -cp %:p:h %:t:r"
-" exec "!time java -cp %:p:h %:t:r"
+exec "!javac % && time java -cp \"%:p:h\" %:t:r"
 elseif &filetype == 'sh'
 exec "!time bash %"
 elseif &filetype == 'python'
