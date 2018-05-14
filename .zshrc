@@ -58,6 +58,10 @@ export M2_HOME=/usr/local/opt/maven/libexec
 export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR=vim
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=".:$PATH"
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -75,19 +79,18 @@ export EDITOR=vim
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=".:$PATH"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 alias python='python3'
 alias fn='find . -name '
-
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 alias dotfiles="/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# tmux session restore
+if which tmux >/dev/null 2>&1; then
+  #if not inside a tmux session, and if no session is started, start a new session
+  test -z "$TMUX" && (tmux -2 attach || tmux -2 new-session)
+fi
+
+
+# INSERT NEW STUFF ABOVE THIS LINE
 test -e "${HOME}/.zshrc.local" && source "${HOME}/.zshrc.local"
-
