@@ -2,7 +2,7 @@
 My zsh, vim, etc.
 ---
 
-Initialize new `dotfiles` in `$HOME/.dotfiles` while tracking `$HOME`:
+### Initialize new `dotfiles` in `$HOME/.dotfiles` while tracking `$HOME`:
 
 ```bash
 git init --bare $HOME/.dotfiles
@@ -17,7 +17,7 @@ source $HOME/.bashrc
 dotfiles config status.showUntrackedFiles no
 ```
 
-Working with the local `dotfiles` repo:
+### Working with the local `dotfiles` repo:
 
 ```bash
 dotfiles status     
@@ -33,7 +33,7 @@ dotfiles commit -m "Add .zshrc"
 dotfiles push
 ```
 
-Checking out `dotfiles` on a new machine:
+### Checking out `dotfiles` on a new machine:
 
 ```bash
 git clone --bare git@github.com:czekaj/dotfiles.git $HOME/.dotfiles
@@ -50,4 +50,30 @@ if [ $? = 0 ]; then
 fi;
 dotfiles checkout
 dotfiles config status.showUntrackedFiles no
+```
+
+## Bootstrap .dotfiles
+
+### Download dependencies
+
+Assuming you have ZSH installed (standard on OSX):
+
+```bash
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# oh-my-zsh auto-suggestions plugin
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# vim plugin manager
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+```
+
+### Use ⌘+k to clear screen inside tmux on OSX
+
+Configure iTerm2:
+
+```yaml
+Keyboard shortcut: ⌘+k
+Action: Send Hex Code
+value: 0x0c
 ```
