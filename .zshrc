@@ -87,3 +87,4 @@ alias fn='find . -name '
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+alias dotfiles='/usr/bin/git --git-dir=/Users/lucas/.dotfiles/ --work-tree=/Users/lucas'
