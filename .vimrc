@@ -1,6 +1,6 @@
 " Necesary for lots of cool vim things
 set nocompatible
-
+set number " line numbers
 syntax enable
 filetype off
 
