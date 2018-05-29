@@ -58,7 +58,7 @@ export M2_HOME=/usr/local/opt/maven/libexec
 export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR=vim
-export JAVA_HOME=$(/usr/libexec/java_home)
+test -e "/usr/libexec/java_home" && export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=".:$PATH"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -78,6 +78,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+[[ -n "$DISPLAY" && "$TERM" = "xterm"  ]] && export TERM=xterm-256color
 
 alias python='python3'
 alias fn='find . -name '
