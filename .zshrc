@@ -83,6 +83,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 alias python='python3'
 alias fn='find . -name '
+alias mc="mc --nosubshell"
 alias dotfiles="/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
