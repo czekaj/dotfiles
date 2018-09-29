@@ -265,3 +265,9 @@ set -g mouse on
 
 # move status line to top
 #set -g status-position top
+
+set-window-option -g xterm-keys on
+
+bind -n S-Right next-window
+bind -n S-Left previous-window
+
