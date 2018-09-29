@@ -60,6 +60,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR=vim
 test -e "/usr/libexec/java_home" && export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=".:$PATH"
+export PATH=$(python -m site --user-base)/bin:$PATH # aws cli
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
