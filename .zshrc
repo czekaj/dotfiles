@@ -95,6 +95,7 @@ if which tmux >/dev/null 2>&1; then
   test -z "$TMUX" && (tmux -2 attach || tmux -2 new-session)
 fi
 
+alias xclip='xclip -selection c'
 
 # INSERT NEW STUFF ABOVE THIS LINE
 test -e "${HOME}/.zshrc.local" && source "${HOME}/.zshrc.local"
