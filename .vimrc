@@ -35,8 +35,8 @@ set wildmenu
 set backspace=indent,eol,start
 
 " tab won't go too far
-set shiftwidth=0
-set tabstop=4
+set softtabstop=2
+set shiftwidth=2
 
 map <F5> :call CompileAndRun()<CR>
 func! CompileAndRun()
