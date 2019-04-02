@@ -61,8 +61,11 @@ export EDITOR=vim
 test -e "/usr/libexec/java_home" && export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=".:$PATH"
 export PATH=$(python3 -m site --user-base)/bin:$PATH # aws cli
+export GOPATH="~/go"
+export PATH="$GOPATH/bin:$PATH"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -90,10 +93,10 @@ alias dotfiles="/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # tmux session restore
-if which tmux >/dev/null 2>&1; then
-  #if not inside a tmux session, and if no session is started, start a new session
-  test -z "$TMUX" && (tmux -2 attach || tmux -2 new-session)
-fi
+# if which tmux >/dev/null 2>&1; then
+#   #if not inside a tmux session, and if no session is started, start a new session
+#   test -z "$TMUX" && (tmux -2 attach || tmux -2 new-session)
+# fi
 
 alias xclip='xclip -selection c'
 
